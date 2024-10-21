@@ -9,7 +9,8 @@ import { User } from "@/interfaces/User";
 import { Bid } from "@/interfaces/Bids";
 
 // Replace with your actual Socket.IO server URL and namespace
-const socket = io("http://localhost:1200/auctions");
+const NEXT_PUBLIC_API_URL= process.env.NEXT_PUBLIC_API_URL;
+const socket = io(`${NEXT_PUBLIC_API_URL}/auctions`);
 
 const BidNowModal = ({ isOpen, onClose, auctionId }: { isOpen: boolean, onClose: () => void, auctionId: number}) => {
   const [bidAmount, setBidAmount] = useState("");
