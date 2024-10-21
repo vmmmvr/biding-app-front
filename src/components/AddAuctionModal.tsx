@@ -18,7 +18,7 @@ const AddAuctionModal = ({ isOpen, onClose, onSubmit }: {isOpen: boolean, onClos
     auctionEnd: null,
   });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: { target: { name: string; value: string; }; }) => {
     setAuctionData({ ...auctionData, [e.target.name]: e.target.value });
   };
 
