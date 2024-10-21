@@ -22,10 +22,10 @@ export default function Home() {
     setIsBidNowModalOpen(true);
   };
 
-  const { data,refetch: allAuctionsRefresh, isPending, error } = useGetAuctionsQuery();
+  const { data,refetch: allAuctionsRefresh } = useGetAuctionsQuery();
   const auctions = data;
 
-  const { mutateAsync: addNewAuction, data: addAuctionDate, isPending: AddLoading } = useAddNewAuctionMutation();
+  const { mutateAsync: addNewAuction, data: addAuctionDate } = useAddNewAuctionMutation();
 
   const handleAddAuction = (auctionData: NewAuctionType) => {
     addNewAuction(auctionData);

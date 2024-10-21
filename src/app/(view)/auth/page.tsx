@@ -11,7 +11,7 @@ import React, { useEffect } from 'react'
 export default function AuthPage() {
     const router = useRouter();
 
-    const { mutateAsync: signin, data, isPending, error } = useUserSignInMutation()
+    const { mutateAsync: signin, data, isPending } = useUserSignInMutation()
 
     const formik = useFormik({
         initialValues: {
@@ -33,7 +33,7 @@ export default function AuthPage() {
             }));
             router.push("/");
         }
-    }, [data])
+    }, [data, router])
 
     return (
         <div className='w-full flex justify-center h-full min-h-screen items-center px-5'>
