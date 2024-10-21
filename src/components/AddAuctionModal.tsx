@@ -27,7 +27,7 @@ const AddAuctionModal = ({ isOpen, onClose, onSubmit }: {isOpen: boolean, onClos
     setAuctionData({ itemName: '', auctionStart: null, auctionEnd: null }); // Reset the form
     onClose(); // Close the modal
   };
-
+  
   return (
     <Dialog  {...missingProperties} open={isOpen} handler={onClose} size="sm">
       <DialogHeader  {...missingProperties}>Add New Auction</DialogHeader>
@@ -44,7 +44,7 @@ const AddAuctionModal = ({ isOpen, onClose, onSubmit }: {isOpen: boolean, onClos
             type="date"
             label="Auction Start"
             name="auctionStart"
-            value={auctionData.auctionStart ? auctionData.auctionStart.toISOString().substring(0, 10) : ''}
+            value={auctionData.auctionStart ? auctionData?.auctionStart.toString().substring(0, 10) : ''}
             onChange={handleChange}
           />
           <Input
@@ -52,7 +52,7 @@ const AddAuctionModal = ({ isOpen, onClose, onSubmit }: {isOpen: boolean, onClos
             type="date"
             label="Auction End"
             name="auctionEnd"
-            value={auctionData.auctionEnd  ? auctionData.auctionEnd.toISOString().substring(0, 10) : ''}
+            value={auctionData.auctionEnd  ? auctionData?.auctionEnd.toString().substring(0, 10) : ''}
             onChange={handleChange}
           />
         </div>
